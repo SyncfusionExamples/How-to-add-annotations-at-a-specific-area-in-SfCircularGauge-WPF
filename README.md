@@ -4,7 +4,7 @@ This demo explains how to restrict the min, max labels overlapping on the rim in
 
 This article explains how to avoid the min and max labels overlapping on rim in the Syncfusion WPF SfCircularGauge as shown in the following image.
 
-![](ovelap_issue.png)
+![](overlap_issue.png)
 
 This can be resolved by adjusting the margin of custom circular scale along with follow the below steps
 
@@ -64,6 +64,7 @@ Step 3:  Customize its appearance by adding the required properties like StartVa
         </syncfusion:SfCircularGauge.Scales>
     </syncfusion:SfCircularGauge>
 ```
+![](resolved_issue.png)
 
 ## See also
 
