@@ -8,17 +8,31 @@
         xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
         Title="MainWindow">
     <syncfusion:SfCircularGauge Width="200"   GaugeType="North">
+
+        <syncfusion:SfCircularGauge.Annotations>
+            <syncfusion:GaugeAnnotation ViewMargin="-50,75" >
+                <TextBlock Text="0cm" FontSize="15" 
+                               Foreground="Red" FontWeight="Bold"
+                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </syncfusion:GaugeAnnotation>
+
+            <syncfusion:GaugeAnnotation ViewMargin="50,75" >
+                <TextBlock Text="50cm" FontSize="15" 
+                               Foreground="Red" FontWeight="Bold"
+                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </syncfusion:GaugeAnnotation>
+
+        </syncfusion:SfCircularGauge.Annotations>
+        
         <syncfusion:SfCircularGauge.Scales>
-            <!--Extended circular scale-->
-            <local:CircularScaleExt LabelStroke="Red" 
-                                      LabelPostfix="cm"
-                                      ShowLabels="True" 
+
+            <syncfusion:CircularScale LabelStroke="Red"                                       
+                                      ShowLabels="False" 
                                       FontSize="15"
                                       FontWeight="Bold"
                                       StartValue="0" 
                                       EndValue="50" 
-                                      TickStroke="Transparent" 
-                                      LabelPosition="Custom"  
+                                      TickStroke="Transparent"                                     
                                       Interval="50" >
                 <syncfusion:CircularScale.Ranges>
                     <syncfusion:CircularRange  StartValue="0"  Stroke="LightSeaGreen" Offset = "0.3" 
@@ -36,7 +50,7 @@
                                                     EnableAnimation="True"                                                    
                                                     />
                 </syncfusion:CircularScale.Pointers>
-            </local:CircularScaleExt>
+            </syncfusion:CircularScale>
         </syncfusion:SfCircularGauge.Scales>
     </syncfusion:SfCircularGauge>
 </Window>
