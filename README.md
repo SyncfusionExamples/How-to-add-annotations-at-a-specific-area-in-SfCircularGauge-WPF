@@ -2,7 +2,7 @@
 
 This article explains how to add the annotations in a specific area in the Syncfusion WPF SfCircularGauge as shown in the following image.
 
- ![](Output.png)
+ ![](resolved_issue.png)
 
 This can be achieved by adding the annotations on the SfCircularGauge  with the ViewMargin property along with follow the below steps:
 
