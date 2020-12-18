@@ -1,4 +1,4 @@
-# How to restrict the min, max labels overlapping on the rim in SfCircularGauge in WPF
+# How to add annotations at a specific area in SfCircularGauge WPF
 
 This article explains how to add the annotations in a specific area in the Syncfusion WPF SfCircularGauge as shown in the following image.
 
