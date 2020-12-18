@@ -1,48 +1,46 @@
 # How to restrict the min, max labels overlapping on the rim in SfCircularGauge in WPF
 
-This demo explains how to restrict the min, max labels overlapping on the rim in SfCircularGauge in WPF.
+This article explains how to add the annotations in a specific area in the Syncfusion WPF SfCircularGauge as shown in the following image.
 
-This article explains how to avoid the min and max labels overlapping on rim in the Syncfusion WPF SfCircularGauge as shown in the following image.
+ ![](Output.png)
 
-![](overlap_issue.png)
-
-This can be resolved by adjusting the margin of custom circular scale along with follow the below steps
+This can be achieved by adding the annotations on the SfCircularGauge  with the ViewMargin property along with follow the below steps:
 
 Step 1: Initialize the SfCircularGauge control with adding the needed range and pointers. 
 
-Step 2: Add a custom CircularScale control  to SfCircularGauge since we don’t have a direct support to adjust CircularPanel Margin to avoid the overlapping. It has been achieved by overriding the OnApplyTemplate method of extended CircularScale.
+Step 2: Add annotations on the SfCircularGauge with the ViewMargin property to customize the x and y position of the by using the pixel values.
 
-[C#]
-
-```
-public class CircularScaleExt : CircularScale
-    {
-        public override void OnApplyTemplate()
-        {
-            base.OnApplyTemplate();
-            var panel = GetTemplateChild("LabelsPanel") as CircularPanel;
-            if (panel != null)
-                panel.Margin = new Thickness(0, 20, 0, 0);
-        }
-    }
-```
 Step 3:  Customize its appearance by adding the required properties like StartValue, EndValue of Range and LabelStroke, FontSize, FontWeight for CircularScale
 
 [XAML]
 
 ```
 <syncfusion:SfCircularGauge Width="200"   GaugeType="North">
+
+        <syncfusion:SfCircularGauge.Annotations>
+            <syncfusion:GaugeAnnotation ViewMargin="-50,75" >
+                <TextBlock Text="0cm" FontSize="15" 
+                               Foreground="Red" FontWeight="Bold"
+                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </syncfusion:GaugeAnnotation>
+
+            <syncfusion:GaugeAnnotation ViewMargin="50,75" >
+                <TextBlock Text="50cm" FontSize="15" 
+                               Foreground="Red" FontWeight="Bold"
+                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </syncfusion:GaugeAnnotation>
+
+        </syncfusion:SfCircularGauge.Annotations>
+        
         <syncfusion:SfCircularGauge.Scales>
-            <!--Extended circular scale-->
-            <local:CircularScaleExt LabelStroke="Red" 
-                                      LabelPostfix="cm"
-                                      ShowLabels="True" 
+
+            <syncfusion:CircularScale LabelStroke="Red"                                       
+                                      ShowLabels="False" 
                                       FontSize="15"
                                       FontWeight="Bold"
                                       StartValue="0" 
                                       EndValue="50" 
-                                      TickStroke="Transparent" 
-                                      LabelPosition="Custom"  
+                                      TickStroke="Transparent"                                     
                                       Interval="50" >
                 <syncfusion:CircularScale.Ranges>
                     <syncfusion:CircularRange  StartValue="0"  Stroke="LightSeaGreen" Offset = "0.3" 
@@ -60,11 +58,10 @@ Step 3:  Customize its appearance by adding the required properties like StartVa
                                                     EnableAnimation="True"                                                    
                                                     />
                 </syncfusion:CircularScale.Pointers>
-            </local:CircularScaleExt>
+            </syncfusion:CircularScale>
         </syncfusion:SfCircularGauge.Scales>
     </syncfusion:SfCircularGauge>
 ```
-![](resolved_issue.png)
 
 ## See also
 
