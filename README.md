@@ -1,76 +1,41 @@
 # How to add annotations at a specific area in SfCircularGauge WPF
 
-This article explains how to add the annotations in a specific area in the Syncfusion WPF SfCircularGauge as shown in the following image.
+This repository contains sample for how to add the annotations in a specific area in the [Syncfusion WPF SfCircularGauge](https://help.syncfusion.com/wpf/radial-gauge/getting-started) control.
 
- ![](resolved_issue.png)
+## Syncfusion controls
 
-This can be achieved by adding the annotations on the SfCircularGauge  with the ViewMargin property along with follow the below steps:
+This project used the following Syncfusion control(s):
+* [SfCircularGauge](https://www.syncfusion.com/wpf-controls/radial-gauge)
 
-Step 1: Initialize the SfCircularGauge control with adding the needed range and pointers. 
+## Requirements to run the sample
 
-Step 2: Add annotations on the SfCircularGauge with the ViewMargin property to customize the x and y position of the by using the pixel values.
+* [Visual Studio](https://visualstudio.microsoft.com/downloads/)
+* .NET Framework 3.5/4.0/4.5/4.5.1/4.6
+* .NET Core 3.1
+* .NET 5.0
 
-Step 3:  Customize its appearance by adding the required properties like StartValue, EndValue of Range and LabelStroke, FontSize, FontWeight for CircularScale
+Refer to the following link for more details - [System Requirements](https://help.syncfusion.com/wpf/system-requirements)
 
-[XAML]
+## How to run the sample
 
-```
-<syncfusion:SfCircularGauge Width="200"   GaugeType="North">
+1. Clone the sample and open it in Visual Studio.
 
-        <syncfusion:SfCircularGauge.Annotations>
-            <syncfusion:GaugeAnnotation ViewMargin="-50,75" >
-                <TextBlock Text="0cm" FontSize="15" 
-                               Foreground="Red" FontWeight="Bold"
-                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            </syncfusion:GaugeAnnotation>
+   *Note: If you download the sample using the "Download ZIP" option, right-click it, select Properties, and then select Unblock.*
+   
+2. Register your license key in the App.cs file as demonstrated in the following code.
 
-            <syncfusion:GaugeAnnotation ViewMargin="50,75" >
-                <TextBlock Text="50cm" FontSize="15" 
-                               Foreground="Red" FontWeight="Bold"
-                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            </syncfusion:GaugeAnnotation>
+		public App()
+		{
+			//Register Syncfusion license
+			Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE KEY");
+		}
+		
+	Refer to this [link](https://help.syncfusion.com/wpf/licensing/overview) for more details.
+	
+3. Clean and build the application.
 
-        </syncfusion:SfCircularGauge.Annotations>
-        
-        <syncfusion:SfCircularGauge.Scales>
+4. Run the application.
 
-            <syncfusion:CircularScale LabelStroke="Red"                                       
-                                      ShowLabels="False" 
-                                      FontSize="15"
-                                      FontWeight="Bold"
-                                      StartValue="0" 
-                                      EndValue="50" 
-                                      TickStroke="Transparent"                                     
-                                      Interval="50" >
-                <syncfusion:CircularScale.Ranges>
-                    <syncfusion:CircularRange  StartValue="0"  Stroke="LightSeaGreen" Offset = "0.3" 
-                                                 StrokeThickness="20" EndValue="50"   StartWidth="0" EndWidth="50"/>
-                </syncfusion:CircularScale.Ranges>
-                <syncfusion:CircularScale.Pointers>
-                    <syncfusion:CircularPointer 
-                                                    PointerType="NeedlePointer" 
-                                                    NeedlePointerType="Tapered"
-                                                    NeedlePointerStroke="Black"
-                                                    PointerCapStroke="Black"
-                                                    NeedlePointerVisibility="Visible" 
-                                                    NeedleLengthFactor="0.85"
-                                                    Value="10"
-                                                    EnableAnimation="True"                                                    
-                                                    />
-                </syncfusion:CircularScale.Pointers>
-            </syncfusion:CircularScale>
-        </syncfusion:SfCircularGauge.Scales>
-    </syncfusion:SfCircularGauge>
-```
+## License
 
-## See also
-
-[How do I set the start and end values for the scale](https://help.syncfusion.com/wpf/radial-gauge/scales#setting-start-and-end-values-for-scale)
- 
-[How do I customize the position of rim](https://help.syncfusion.com/wpf/radial-gauge/rim#setting-a-position-for-rim)
- 
-[How do I add a needle pointer to the gauge](https://help.syncfusion.com/wpf/radial-gauge/pointers#needle-pointer)
- 
-[How to change the position of ticks](https://help.syncfusion.com/wpf/radial-gauge/ticks#setting-ticks-visibility-in-scale)
-
-
+Syncfusion has no liability for any damage or consequence that may arise by using or viewing the samples. The samples are for demonstrative purposes, and if you choose to use or access the samples, you agree to not hold Syncfusion liable, in any form, for any damage that is related to use, for accessing, or viewing the samples. By accessing, viewing, or seeing the samples, you acknowledge and agree Syncfusion’s samples will not allow you seek injunctive relief in any form for any claim related to the sample. If you do not agree to this, do not view, access, utilize, or otherwise do anything with Syncfusion’s samples.
