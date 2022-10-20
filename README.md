@@ -1,6 +1,6 @@
 # How to add annotations at a specific area in SfCircularGauge WPF
 
-This repository contains sample for how to add the annotations in a specific area in the [Syncfusion WPF SfCircularGauge](https://help.syncfusion.com/wpf/radial-gauge/getting-started) control.
+This repository contains sample to add the annotations in a specific area in the [Syncfusion WPF SfCircularGauge](https://help.syncfusion.com/wpf/radial-gauge/getting-started) control.
 
 ## Syncfusion controls
 
